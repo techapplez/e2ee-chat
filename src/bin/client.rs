@@ -24,7 +24,7 @@ struct IncomingMessage {
 
 #[tokio::main]
 async fn main() {
-    let url = "ws://b89e-2a01-71a0-8405-d800-31c4-6ad1-a850-9b97.ngrok-free.app";
+    let url = "ws://ca5a-2a01-71a0-8405-d800-31c4-6ad1-a850-9b97.ngrok-free.app";
     let (ws_stream, _) = connect_async(url).await.expect("Failed to connect");
     let (mut write, mut read) = ws_stream.split();
     println!("Type username and press enter:");
@@ -60,7 +60,6 @@ async fn main() {
                     io::stdout().flush().unwrap();
                 } else {
                      eprintln!("\n[!] Failed to decrypt received message");
-                     print!("> ");
                      io::stdout().flush().unwrap();
                 }
             }
